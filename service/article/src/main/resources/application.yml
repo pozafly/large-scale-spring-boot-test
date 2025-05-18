@@ -11,6 +11,16 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     open-in-view: false
-    show-sql: true
+    #    show-sql: true
     hibernate:
       ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true      # JDBC 로그 활성화
+      multiline: true           # MultiLineFormat 자동 적용
+      logging: slf4j            # Slf4JLogger 사용
